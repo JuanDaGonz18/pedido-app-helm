@@ -1,0 +1,13 @@
+# Helm
+charts/*/charts/
+charts/*/tmp/
+*.tgz
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

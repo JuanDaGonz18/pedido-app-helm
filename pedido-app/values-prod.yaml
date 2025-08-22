@@ -1,0 +1,5 @@
+postgresql:
+  primary:
+    persistence:
+      size: 8Gi
+  replicaCount: 2

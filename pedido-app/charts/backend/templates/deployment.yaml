@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "backend.fullname" . }}
+  labels:
+    {{- include "backend.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "backend.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "backend.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: backend
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+          {{- if .Values.extraArgs }}
+          args:
+            {{- range .Values.extraArgs }}
+            - {{ . }}
+            {{- end }}
+          {{- end }}
+          livenessProbe:
+            tcpSocket:
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: 3
+            periodSeconds: 10
