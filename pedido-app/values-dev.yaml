@@ -1,11 +1,12 @@
 postgresql:
   primary:
     persistence:
+      enabled: true
       size: 1Gi
   replicaCount: 1
 
 backend:
   image:
-    repository: juandagonz1809/pedido-backend
+    repository: juanda1809/pedido-backend
     tag: latest
   replicaCount: 1
