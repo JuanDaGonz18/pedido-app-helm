@@ -5,7 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/instance: pedido-app
 data:
-  DATABASE_HOST: pedido-app-postgresql
+  DATABASE_HOST: mypg-postgresql.default.svc.cluster.local
   DATABASE_PORT: "5432"
-  DATABASE_NAME: pedidos_db
-  DATABASE_USER: pedido_user
+  DATABASE_NAME: appdb
+  DATABASE_USER: appuser
+

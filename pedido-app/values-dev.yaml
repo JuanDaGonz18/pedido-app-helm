@@ -6,6 +6,9 @@ postgresql:
   replicaCount: 1
 
 backend:
+  service:
+    port: 3000
+    targetPort: 3000
   image:
     repository: juanda1809/pedido-backend
     tag: latest
