@@ -6,6 +6,6 @@ postgresql:
 
 backend:
   image:
-    repository: juandagonz18/pedido-backend
+    repository: juandagonz1809/pedido-backend
     tag: latest
   replicaCount: 1
