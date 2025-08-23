@@ -3,3 +3,9 @@ postgresql:
     persistence:
       size: 1Gi
   replicaCount: 1
+
+backend:
+  image:
+    repository: juandagonz18/pedido-backend
+    tag: latest
+  replicaCount: 1

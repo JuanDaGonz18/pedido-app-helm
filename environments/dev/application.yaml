@@ -6,15 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/JuanDaGonz18/pedido-app-helm.git'
-    targetRevision: HEAD
-    path: charts/pedido-app
+    repoURL: https://github.com/JuanDaGonz18/pedido-app-helm.git
+    targetRevision: main
+    path: .
     helm:
       valueFiles:
         - values-dev.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: pedido-dev
   syncPolicy:
     automated:
       prune: true

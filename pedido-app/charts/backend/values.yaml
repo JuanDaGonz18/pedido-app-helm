@@ -130,3 +130,8 @@ postgresql:
   primary:
     name: postgresql
     port: "5432"
+  image:
+  repository: juanda1809/pedido-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
