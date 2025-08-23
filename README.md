@@ -31,7 +31,7 @@ ambientes (`dev` y `prod`).
 Clona el repositorio:
 
 ``` bash
-git clone <URL-DEL-REPO>
+git clone <https://github.com/JuanDaGonz18/pedido-app-helm.git>
 cd pedido-app/charts/pedido-app
 ```
 
