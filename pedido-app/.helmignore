@@ -21,3 +21,11 @@
 .idea/
 *.tmproj
 .vscode/
+node_modules
+charts/node_modules
+*.tgz
+*.exe
+*.dll
+*.log
+dist
+tmp

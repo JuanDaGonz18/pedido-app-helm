@@ -1,4 +1,9 @@
 postgresql:
+  enabled: true
+  auth:
+    username: pedido_user
+    password: pedido_pass123
+    database: pedidos_db
   primary:
     persistence:
       enabled: true
@@ -6,7 +11,12 @@ postgresql:
   replicaCount: 2
 
 backend:
+  service:
+    port: 3000
+    targetPort: 3000
   image:
     repository: juanda1809/pedido-backend
-    tag: v1.0.0
+    tag: latest
   replicaCount: 2
+  
+

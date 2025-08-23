@@ -1,9 +1,15 @@
 postgresql:
+  enabled: true
+  auth:
+    username: pedido_user
+    password: tu_password
+    database: pedidos_db
   primary:
     persistence:
       enabled: true
       size: 1Gi
   replicaCount: 1
+
 
 backend:
   service:
