@@ -16,24 +16,23 @@ spec:
     spec:
       containers:
         - name: backend
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: juanda1809/pedido-backend:latest
           imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
+          envFrom:
+            - secretRef:
+                name: pedido-backend-db-secret
+            - configMapRef:
+                name: pedido-backend-db-config
           ports:
             - name: http
               containerPort: 3000
-          {{- if .Values.extraArgs }}
-          args:
-            {{- range .Values.extraArgs }}
-            - {{ . }}
-            {{- end }}
-          {{- end }}
           livenessProbe:
             tcpSocket:
-              port: {{ .Values.service.port }}
+              port: 3000
             initialDelaySeconds: 3
             periodSeconds: 10
           readinessProbe:
             tcpSocket:
-              port: {{ .Values.service.port }}
+              port: 3000
             initialDelaySeconds: 3
             periodSeconds: 10

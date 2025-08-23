@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: juanda1809/pedido-backend
+  tag: latest
   pullPolicy: IfNotPresent
-  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -22,7 +22,7 @@ podSecurityContext: {}
 securityContext: {}
 service:
   type: ClusterIP
-  port: 80
+  port: 3000
 
 ingress:
   enabled: false
@@ -78,3 +78,8 @@ postgresql:
     tag: latest
     pullPolicy: IfNotPresent
 
+envFrom:
+  - secretRef:
+      name: pedido-backend-db-secret
+  - configMapRef:
+      name: pedido-backend-db-config

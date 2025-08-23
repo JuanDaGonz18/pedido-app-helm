@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: pedido-backend-db-config
 data:
-  DATABASE_HOST: {{ .Values.postgresql.primary.name | default "postgresql" | quote }}
-  DATABASE_PORT: {{ .Values.postgresql.primary.port | default "5432" | quote }}
-  DATABASE_NAME: {{ .Values.postgresql.auth.database | quote }}
+  DATABASE_HOST: pedido-app-dev-postgresql
+  DATABASE_PORT: "5432"
+  DATABASE_NAME: pedidos_db
+
