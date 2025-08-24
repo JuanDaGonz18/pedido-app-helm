@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: juanda1809/pedido-backend
-  tag: latest
+  tag: v1.0.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
