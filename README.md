@@ -1,5 +1,5 @@
 # 📦 Pedido App -- Helm + PostgreSQL + Backend + Frontend + ArgoCD
-
+### Autores: Juan David Gonzalez, Julian Barragan y Camilo Tarazona
 Este proyecto implementa la aplicación **Pedido App** utilizando
 Kubernetes, Helm y ArgoCD.\
 Incluye el despliegue de **PostgreSQL** con persistencia, integración
